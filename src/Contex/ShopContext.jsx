@@ -15,28 +15,29 @@ const ShopContextProvider = ({ children }) => {
   // Fetch products
   useEffect(() => {
     fetch("http://localhost:4000/allproduct")
-      .then(res => res.json())
-      .then(data => setAll_product(data))
-      .catch(err => console.error("Failed to fetch products:", err));
+      .then((res) => res.json())
+      .then((data) => setAll_product(data))
+      .catch((err) => console.error("Failed to fetch products:", err));
 
-      if(localStorage.getItem('auth-token'))
-      {
-        fetch('http://localhost:4000/getcart',{
-          method:'POST',
-          headers:{
-            Accept:'application/from-data',
-            'auth-token':`${localStorage.getItem('auth-token')}`,
-            'Content-Type':'application/json',
-          },
-          body:"",
-        }).then((Response)=>Response.json())
-        .then((data)=>setCartItems(data));
-      }
+    const token = localStorage.getItem("auth-token");
+    if (token) {
+      fetch("http://localhost:4000/getcart", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "auth-token": token,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({}),
+      })
+        .then((res) => res.json())
+        .then((data) => setCartItems(data));
+    }
   }, []);
 
   // ADD TO CART
   const addToCart = (itemId) => {
-    setCartItems(prev => ({
+    setCartItems((prev) => ({
       ...prev,
       [itemId]: prev[itemId] + 1,
     }));
@@ -51,21 +52,22 @@ const ShopContextProvider = ({ children }) => {
         },
         body: JSON.stringify({ itemId }),
       })
-        .then(res => res.json())
-        .then(data => console.log("Cart updated:", data))
-        .catch(err => console.error(err));
+        .then((res) => res.json())
+        .then((data) => console.log("Cart updated:", data))
+        .catch((err) => console.error(err));
     }
   };
 
   // REMOVE FROM CART
   const removeFromCart = (itemId) => {
-    setCartItems(prev => ({
+    setCartItems((prev) => ({
       ...prev,
       [itemId]: Math.max(prev[itemId] - 1, 0),
     }));
-    if(localStorage.getItem('auth-token'))
-    {
-        fetch("http://localhost:4000/removeFromCart", {
+
+    const token = localStorage.getItem("auth-token"); // FIXED: define token
+    if (token) {
+      fetch("http://localhost:4000/removeFromCart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,9 +75,9 @@ const ShopContextProvider = ({ children }) => {
         },
         body: JSON.stringify({ itemId }),
       })
-        .then(res => res.json())
-        .then(data => console.log("Cart updated:", data))
-        .catch(err => console.error(err));
+        .then((res) => res.json())
+        .then((data) => console.log("Cart updated:", data))
+        .catch((err) => console.error(err));
     }
   };
 
@@ -84,7 +86,7 @@ const ShopContextProvider = ({ children }) => {
     let total = 0;
     for (const id in cartItems) {
       if (cartItems[id] > 0) {
-        const product = all_product.find(p => p.id === Number(id));
+        const product = all_product.find((p) => p.id === Number(id));
         if (product) total += product.new_price * cartItems[id];
       }
     }
@@ -117,5 +119,6 @@ const ShopContextProvider = ({ children }) => {
 };
 
 export default ShopContextProvider;
+
 
 
