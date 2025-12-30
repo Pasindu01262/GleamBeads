@@ -14,14 +14,14 @@ const ShopContextProvider = ({ children }) => {
 
   // Fetch products
   useEffect(() => {
-    fetch("http://ecommerce-backend-eight-sage-86.vercel.app/allproduct")
+    fetch("https://ecommerce-backend-eight-sage-86.vercel.app/allproduct")
       .then((res) => res.json())
       .then((data) => setAll_product(data))
       .catch((err) => console.error("Failed to fetch products:", err));
 
     const token = localStorage.getItem("auth-token");
     if (token) {
-      fetch("http://ecommerce-backend-eight-sage-86.vercel.app/getcart", {
+      fetch("https://ecommerce-backend-eight-sage-86.vercel.app/getcart", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -44,7 +44,7 @@ const ShopContextProvider = ({ children }) => {
 
     const token = localStorage.getItem("auth-token");
     if (token) {
-      fetch("http://ecommerce-backend-eight-sage-86.vercel.app/addtocart", {
+      fetch("https://ecommerce-backend-eight-sage-86.vercel.app/addtocart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -67,7 +67,7 @@ const ShopContextProvider = ({ children }) => {
 
     const token = localStorage.getItem("auth-token"); // FIXED: define token
     if (token) {
-      fetch("http://ecommerce-backend-eight-sage-86.vercel.app/removeFromCart", {
+      fetch("https://ecommerce-backend-eight-sage-86.vercel.app/removeFromCart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
