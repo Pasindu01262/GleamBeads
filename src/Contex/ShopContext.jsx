@@ -14,9 +14,7 @@ const getDefaultCart = () => {
 const ShopContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
-<<<<<<< HEAD
-=======
-  // Fetch products
+
   useEffect(() => {
     fetch("https://ecommerce-backend-eight-sage-86.vercel.app/allproduct")
       .then((res) => res.json())
