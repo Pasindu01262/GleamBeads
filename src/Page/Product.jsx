@@ -20,10 +20,11 @@ function Product() {
     <div>
       <Breadcrum product={product} />
       <ProductDisplay product={product} />
-      <DscriptionBox/>
-      <RelatedProduct/>
+      <DscriptionBox />
+      <RelatedProduct />
     </div>
   );
 }
 
 export default Product;
+

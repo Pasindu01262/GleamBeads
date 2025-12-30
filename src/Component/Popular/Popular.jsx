@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Popular.css";
 import Item from "../Item/Item";
+import allproduct from "../Assest/Frontend_Assets/all_product"
 
 
 
@@ -8,7 +9,7 @@ function Popular() {
 
   const [popularProduct, setPopularProduct] = useState([]);
 
-  useEffect(() => {
+{/*  useEffect(() => {
     fetch("http://localhost:4000/popularinwomen")
       .then(response => {
         if (!response.ok) {
@@ -25,7 +26,7 @@ function Popular() {
         }
       })
       .catch(err => console.error("Fetch error:", err));
-  }, []);
+  }, []);  */}
 
   //creating endpoint for adding products in cartdata
 
@@ -36,7 +37,7 @@ function Popular() {
       <h1>POPULAR IN WOMEN</h1>
       <hr />
       <div className="popular_item">
-        {popularProduct.map((item, i) => (
+        {allproduct.map((item, i) => (
           <Item
             key={i}
             id={item.id}

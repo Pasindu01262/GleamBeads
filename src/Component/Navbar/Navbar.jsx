@@ -31,8 +31,8 @@ function Navbar() {
            <li onClick={()=>{setmenu("Contact")}}>< Link to="/Contact" style={{textDecoration:"none"}}>Contact</ Link>{menu==="Contact"? <hr/>: <></>}</li>
         </ul>
         <div className='nav-login-cart'>
-          {localStorage.getItem('auth-token')?<button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>:
-          <Link to="/login"><button>Login</button></Link>}
+         {/* {localStorage.getItem('auth-token')?<button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>:
+          <Link to="/login"><button>Login</button></Link>}*/}
            
           {/* <Link to="/cart"><img src={card_icon } alt="card_icon "/></Link>
            <div className='nav-cart-count'>{getTotalCartItem()}</div>*/}

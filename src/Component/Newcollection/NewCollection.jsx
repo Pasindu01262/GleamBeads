@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import "./NewCollection.css";
 import Item from '../Item/Item';
-//import all_product from "../../Component/Assest/Frontend_Assets/all_product"
+import all_product from "../../Component/Assest/Frontend_Assets/all_product"
 
 function NewCollection() {
 
   const [new_collection, setNew_collection] = useState([]);
 
-  useEffect(() => {
+  {/*useEffect(() => {
     fetch('http://localhost:4000/newcollectiond') // ✅ Correct URL` 
 
       .then(response => {
@@ -16,14 +16,14 @@ function NewCollection() {
       })
       .then(data => setNew_collection(data))
       .catch(err => console.error("Failed to fetch new collections:", err));
-  }, []); 
+  }, []); */}
 
   return (
     <div className='new-collection'>
       <h1>NEW COLLECTIONS</h1>
       <hr/>
       <div className='collection'>
-        {new_collection.map((item, i) => (
+        {all_product.map((item, i) => (
           <Item 
             key={i} 
             id={item.id} 

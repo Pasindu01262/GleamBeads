@@ -4,12 +4,13 @@ import { ShopContext } from '../Contex/ShopContext'
 import dropdown_icon from "../Component/Assest/Frontend_Assets/dropdown_icon.png"
 import Item from "../Component/Item/Item"
 import Add_image from "../Component/Assest/Frontend_Assets/add.jpg"
+import allproduct from '../Component/Assest/Frontend_Assets/all_product'
 
 function ShopCategory(props) {
   const {all_product}=useContext(ShopContext);
   return (
     <div className='shop-catagory'>
-         <img style={{height:"430px"}}className='shopcategory-banner' src={Add_image} alt="banner"/> {/*src={props.banner}*/} 
+         <img style={{height:"430px"}}className='shopcategory-banner' src={props.banner} alt="banner"/> {/*src={props.banner}*/} 
         <div className='shopcategory-indexsort'>
           <p>
             <span>Showing 1-12</span> out of products
@@ -19,7 +20,7 @@ function ShopCategory(props) {
           </div>
         </div>
         <div className='shopcategory-product'>
-          {all_product.map((item,i)=>{
+          {allproduct.map((item,i)=>{
             if (props.category===Item.category)
 
               {
