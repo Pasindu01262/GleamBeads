@@ -9,8 +9,13 @@ function Popular() {
 
   const [popularProduct, setPopularProduct] = useState([]);
 
+<<<<<<< HEAD
 {/*  useEffect(() => {
     fetch("http://localhost:4000/popularinwomen")
+=======
+  useEffect(() => {
+    fetch("https://ecommerce-backend-eight-sage-86.vercel.app/popularinwomen")
+>>>>>>> 05834de36845295a39bb8bdcd546a770c014242c
       .then(response => {
         if (!response.ok) {
           throw new Error("Network response was not OK");

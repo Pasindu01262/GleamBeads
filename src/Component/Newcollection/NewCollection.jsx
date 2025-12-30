@@ -7,8 +7,13 @@ function NewCollection() {
 
   const [new_collection, setNew_collection] = useState([]);
 
+<<<<<<< HEAD
   {/*useEffect(() => {
     fetch('http://localhost:4000/newcollectiond') // ✅ Correct URL` 
+=======
+  useEffect(() => {
+    fetch('https://ecommerce-backend-eight-sage-86.vercel.app/newcollection') // ✅ Correct URL` 
+>>>>>>> 05834de36845295a39bb8bdcd546a770c014242c
 
       .then(response => {
         if (!response.ok) throw new Error("Network response was not OK");
