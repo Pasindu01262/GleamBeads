@@ -10,11 +10,7 @@ function ProductDisplay({ product }) {
 
   const { addToCart } = useContext(ShopContext);
 
-import React, { useState } from "react";
-import "./ProductDisplay.css";
-import star_icon from "../Assest/Frontend_Assets/star_icon.png";
-import star_dull_icon from "../Assest/Frontend_Assets/star_dull_icon.png";
-// import { ShopContext } from '../../Contex/ShopContext';
+
 
 function ProductDisplay({ product }) {
   // Hooks always at the top
@@ -51,18 +47,7 @@ function ProductDisplay({ product }) {
     }
   };
 
-  return (
-    <div className="productdisplay">
-      {/* LEFT SIDE */}
-      <div className="productdisplay-left">
-        <div className="productdisplay-img-list">
-          <img className="thumbnail-img" src={product.image} alt={product.name} />
-          <img className="thumbnail-img" src={product.image} alt={product.name} />
-          <img className="thumbnail-img" src={product.image} alt={product.name} />
-          <img className="thumbnail-img" src={product.image} alt={product.name} />
-        </div>
-
-
+  
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       body: formData,
@@ -77,7 +62,7 @@ function ProductDisplay({ product }) {
     }
   };
 
-  if (!product) return null; 
+
 
   return (
     <div className="productdisplay">
