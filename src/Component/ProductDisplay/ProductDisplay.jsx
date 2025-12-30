@@ -18,49 +18,33 @@ function ProductDisplay({ product }) {
 
 
   const onSubmit = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const formData = new FormData(event.target);
-    formData.append("access_key", "21ad52f7-b16b-4c0d-9a5e-03e24838d783");
-    formData.append("product_id", product.id);
-    formData.append("product_name", product.name);
-    formData.append("product_price", product.new_price);
+  const formData = new FormData(event.target);
+  formData.append("access_key", "21ad52f7-b16b-4c0d-9a5e-03e24838d783");
+  formData.append("product_id", product.id);
+  formData.append("product_name", product.name);
+  formData.append("product_price", product.new_price);
 
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        alert("Order submitted successfully!");
-        event.target.reset();
-      } else {
-        alert("Form submission failed.");
-      }
-    } catch (error) {
-      alert("Something went wrong.");
-      console.error(error);
-    }
-  };
-
-  
+  try {
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       body: formData,
     });
 
     const data = await response.json();
+
     if (data.success) {
-      setResult(alert("Successfully product sent. Thank you!"));
+      alert("Successfully product sent. Thank you!");
       event.target.reset();
     } else {
-      setResult(alert("Error"));
+      alert("Form submission failed.");
     }
-  };
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong.");
+  }
+};
 
 
 
