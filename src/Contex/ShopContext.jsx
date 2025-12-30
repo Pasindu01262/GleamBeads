@@ -38,14 +38,13 @@ const ShopContextProvider = ({ children }) => {
   }, []);
 
   // ADD TO CART
->>>>>>> 05834de36845295a39bb8bdcd546a770c014242c
+
   const addToCart = (itemId) => {
     setCartItems((prev) => ({
       ...prev,
       [itemId]: prev[itemId] + 1,
     }));
-<<<<<<< HEAD
-=======
+
 
     const token = localStorage.getItem("auth-token");
     if (token) {
@@ -61,7 +60,7 @@ const ShopContextProvider = ({ children }) => {
         .then((data) => console.log("Cart updated:", data))
         .catch((err) => console.error(err));
     }
->>>>>>> 05834de36845295a39bb8bdcd546a770c014242c
+
   };
 
   const removeFromCart = (itemId) => {
@@ -69,8 +68,7 @@ const ShopContextProvider = ({ children }) => {
       ...prev,
       [itemId]: Math.max(prev[itemId] - 1, 0),
     }));
-<<<<<<< HEAD
-=======
+
 
     const token = localStorage.getItem("auth-token"); // FIXED: define token
     if (token) {
@@ -86,7 +84,7 @@ const ShopContextProvider = ({ children }) => {
         .then((data) => console.log("Cart updated:", data))
         .catch((err) => console.error(err));
     }
->>>>>>> 05834de36845295a39bb8bdcd546a770c014242c
+
   };
 
   const getTotalCartAmount = () => {
@@ -94,13 +92,13 @@ const ShopContextProvider = ({ children }) => {
     for (const id in cartItems) {
       if (cartItems[id] > 0) {
         const product = all_product.find((p) => p.id === Number(id));
-<<<<<<< HEAD
+
         if (product) {
           total += product.new_price * cartItems[id];
         }
-=======
+
         if (product) total += product.new_price * cartItems[id];
->>>>>>> 05834de36845295a39bb8bdcd546a770c014242c
+
       }
     }
     return total;
