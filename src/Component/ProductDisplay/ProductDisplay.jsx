@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useContext } from "react";
 import "./ProductDisplay.css";
 import star_icon from "../Assest/Frontend_Assets/star_icon.png";
