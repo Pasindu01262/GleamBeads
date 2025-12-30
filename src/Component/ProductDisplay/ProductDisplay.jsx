@@ -9,7 +9,7 @@ function ProductDisplay({ product }) {
   if (!product) return null;
 
   const { addToCart } = useContext(ShopContext);
-=======
+
 import React, { useState } from "react";
 import "./ProductDisplay.css";
 import star_icon from "../Assest/Frontend_Assets/star_icon.png";
@@ -19,7 +19,7 @@ import star_dull_icon from "../Assest/Frontend_Assets/star_dull_icon.png";
 function ProductDisplay({ product }) {
   // Hooks always at the top
   const [result, setResult] = useState("");
->>>>>>> 05834de36845295a39bb8bdcd546a770c014242c
+
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -30,7 +30,7 @@ function ProductDisplay({ product }) {
     formData.append("product_name", product.name);
     formData.append("product_price", product.new_price);
 
-<<<<<<< HEAD
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -62,7 +62,7 @@ function ProductDisplay({ product }) {
           <img className="thumbnail-img" src={product.image} alt={product.name} />
         </div>
 
-=======
+
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       body: formData,
@@ -77,7 +77,7 @@ function ProductDisplay({ product }) {
     }
   };
 
-  if (!product) return null; // Early return after hooks
+  if (!product) return null; 
 
   return (
     <div className="productdisplay">
@@ -88,21 +88,21 @@ function ProductDisplay({ product }) {
           <img src={product.image} alt="" />
           <img src={product.image} alt="" />
         </div>
->>>>>>> 05834de36845295a39bb8bdcd546a770c014242c
+
         <div className="productdisplay-img">
           <img
             className="productdisplay-main-img"
             src={product.image}
-<<<<<<< HEAD
+
             alt={product.name}
-=======
+
             alt=""
->>>>>>> 05834de36845295a39bb8bdcd546a770c014242c
+
           />
         </div>
       </div>
 
-<<<<<<< HEAD
+
       {/* RIGHT SIDE */}
       <div className="productdisplay-right">
         <h1 className="product-title">{product.name}</h1>
@@ -168,7 +168,7 @@ function ProductDisplay({ product }) {
             
           </form>
         </div>
-=======
+
       <div className="productdisplay-right">
         <h1>{product.name}</h1>
         <div className="productdisplay-right-star">
@@ -222,7 +222,7 @@ function ProductDisplay({ product }) {
             <span>{result}</span>
           </form>
         </div>
->>>>>>> 05834de36845295a39bb8bdcd546a770c014242c
+
       </div>
     </div>
   );
@@ -230,7 +230,4 @@ function ProductDisplay({ product }) {
 
 export default ProductDisplay;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 05834de36845295a39bb8bdcd546a770c014242c
