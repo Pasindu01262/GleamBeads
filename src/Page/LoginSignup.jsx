@@ -19,7 +19,7 @@ function LoginSignup() {
     console.log("Login Function Executed", formData);
 
     try {
-      const response = await fetch("http://ecommerce-backend-eight-sage-86.vercel.app/login", {
+      const response = await fetch("https://ecommerce-backend-eight-sage-86.vercel.app/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +51,7 @@ function LoginSignup() {
     console.log("Signup Function Executed", formData);
 
     try {
-      const response = await fetch("http://ecommerce-backend-eight-sage-86.vercel.app/signup", {
+      const response = await fetch("https://ecommerce-backend-eight-sage-86.vercel.app/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
